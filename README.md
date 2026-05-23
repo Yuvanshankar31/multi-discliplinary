@@ -1,6 +1,7 @@
-# 🌌 Multi-Disciplinary Engineering & AI Workspace
+# 💸 Cost-Aware AI Training
 
-Welcome to the **Multi-Disciplinary Engineering & AI Workspace**. This repository serves as a centralized hub for advanced, high-performance projects bridging machine learning, cloud infrastructure orchestration, hardware simulations, and responsive full-stack applications.
+Welcome to the **Cost-Aware AI Training** repository. This workspace hosts an advanced, high-performance platform bridging machine learning, cloud infrastructure orchestration, hardware simulations, and responsive full-stack dashboards to optimize and reduce cloud AI training costs.
+
 
 ---
 
