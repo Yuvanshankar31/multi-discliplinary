@@ -1,9 +1,20 @@
-import { Route, BrowserRouter as Router, Routes } from 'react-router-dom';
+import { Route, BrowserRouter as Router, Routes, Navigate } from 'react-router-dom';
 import Layout from './components/Layout';
 import Dashboard from './pages/Dashboard';
 import JobHistory from './pages/JobHistory';
 import LandingPage from './pages/LandingPage';
 import NewJob from './pages/NewJob';
+import Login from './pages/Login';
+import Signup from './pages/Signup';
+
+// Protected Route Wrapper
+function ProtectedRoute({ children }) {
+  const user = localStorage.getItem('user');
+  if (!user) {
+    return <Navigate to="/login" replace />;
+  }
+  return children;
+}
 
 // Global ChartJS registration
 import {
@@ -35,9 +46,11 @@ function App() {
       <Layout>
         <Routes>
           <Route path="/" element={<LandingPage />} />
-          <Route path="/dashboard" element={<Dashboard />} />
-          <Route path="/new-job" element={<NewJob />} />
-          <Route path="/history" element={<JobHistory />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/signup" element={<Signup />} />
+          <Route path="/dashboard" element={<ProtectedRoute><Dashboard /></ProtectedRoute>} />
+          <Route path="/new-job" element={<ProtectedRoute><NewJob /></ProtectedRoute>} />
+          <Route path="/history" element={<ProtectedRoute><JobHistory /></ProtectedRoute>} />
         </Routes>
       </Layout>
     </Router>
