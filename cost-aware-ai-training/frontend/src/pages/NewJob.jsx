@@ -4,7 +4,7 @@ import { Activity, Server, Zap, Globe, Layers, Cpu, Compass } from 'lucide-react
 import { useCallback, useEffect, useState } from 'react';
 import { formatInr, formatInrPerHour } from '../utils/currency';
 
-const API_BASE_URL = 'http://localhost:8000';
+const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || 'http://localhost:8000';
 
 export default function NewJob() {
   const [formData, setFormData] = useState({

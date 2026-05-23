@@ -4,7 +4,7 @@ import { Eye, EyeOff, Lock, Mail, Server, ShieldCheck, ArrowRight } from 'lucide
 import { useState, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 
-const API_BASE_URL = 'http://localhost:8000';
+const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || 'http://localhost:8000';
 
 export default function Login() {
   const navigate = useNavigate();

@@ -4,7 +4,7 @@ import { HardDrive, Trash2, Cpu, Cloud, Layers, Globe } from 'lucide-react';
 import { useCallback, useEffect, useState } from 'react';
 import { formatInr } from '../utils/currency';
 
-const API_BASE_URL = 'http://localhost:8000';
+const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || 'http://localhost:8000';
 
 const statusColors = {
   queued: 'bg-accent-amber/15 text-accent-amber border-accent-amber/35',

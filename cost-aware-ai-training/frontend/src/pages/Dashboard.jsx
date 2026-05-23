@@ -5,7 +5,7 @@ import { useEffect, useState } from 'react';
 import { Doughnut, Line } from 'react-chartjs-2';
 import { formatInr } from '../utils/currency';
 
-const API_BASE_URL = 'http://localhost:8000';
+const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || 'http://localhost:8000';
 
 export default function Dashboard() {
   const [metrics, setMetrics] = useState({ gpu: [], cpu: [], time: [] });
